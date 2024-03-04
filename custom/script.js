@@ -8,11 +8,8 @@ $(window).on("load", function () {
 });
 
 window.onbeforeunload = function () {
-    // window.scrollTo(0, 0);
-    // if (window.innerWidth < 1200) {
-    // $('body').css("opacity", "0");
-    // window.scrollTo(0, 0);
-    // }
+    $('body').css("opacity", "0");
+    window.scrollTo(0, 0);
 };
 
 onresize = (event) => {
