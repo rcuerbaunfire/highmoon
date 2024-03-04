@@ -77,7 +77,7 @@
     };
 
     Animation.prototype.handleAccordion = function () {
-        const items = container.find(".accordion-item");
+        const items = $(".accordion-item");
         if (!items.length) return;
 
         items.click(function () {
