@@ -7,11 +7,6 @@ $(window).on("load", function () {
     window.app.load();
 });
 
-window.onbeforeunload = function () {
-    $('body').css("opacity", "0");
-    window.scrollTo(0, 0);
-};
-
 onresize = (event) => {
     ScrollTrigger.refresh(true);
 };
