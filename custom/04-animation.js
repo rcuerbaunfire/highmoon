@@ -12,6 +12,7 @@
 
     Animation.prototype.init = function () {
         Animation.prototype.transitionPresets();
+        Animation.prototype.handleAccordion();
     };
 
     Animation.prototype.transitionPresets = function (parent = '') {
