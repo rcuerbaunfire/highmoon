@@ -110,7 +110,7 @@
                 self.removeClass("active");
 
                 gsap.timeline()
-                .set(block, {
+                .set(plusLine, {
                     display: "none"
                 })
                 .to(body,
