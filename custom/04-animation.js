@@ -111,7 +111,7 @@
 
                 gsap.timeline()
                 .set(plusLine, {
-                    display: "none"
+                    display: "block"
                 })
                 .to(body,
                     {
