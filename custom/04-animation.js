@@ -75,6 +75,56 @@
         }
     };
 
+    Animation.prototype.handleAccordion = function () {
+        const items = container.find(".accordion-item");
+        if (!items.length) return;
+
+        items.click(function () {
+            const self = $(this);
+            const body = self.find(".accordion-item-content");
+            const plusLine = self.find(".ac-icon svg line:first-of-type");
+
+            if (!self.hasClass("active")) {
+                self.addClass("active");
+
+                gsap.timeline()
+                .set(plusLine, {
+                    display: "none"
+                })
+                .fromTo(body,
+                    {
+                        height: 0,
+                        autoAlpha: 0,
+                    },
+                    {
+                        height: "auto",
+                        duration: 0.6,
+                        autoAlpha: 1,
+                        ease: Power2.easeOut,
+                        overwrite: true
+                    }
+                )
+
+            } else {
+                self.removeClass("active");
+
+                gsap.timeline()
+                .set(block, {
+                    display: "none"
+                })
+                .to(body,
+                    {
+                        height: 0,
+                        duration: 0.6,
+                        ease: Power2.easeOut,
+                        overwrite: true,
+                        autoAlpha: 0,
+                    }
+                )
+            }
+        });
+    };
+
     app.Animation = Animation;
 
     app.ready(function () {
