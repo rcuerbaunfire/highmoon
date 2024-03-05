@@ -27,7 +27,7 @@
         animatedRight();
         animatedLines();
 
-        function animateDirection(type, x, y, alpha) {
+        function animateDirection(type, x, y, alpha = false) {
             const elements = gsap.utils.toArray(`${parent} .transition-${type}`);
 
             if (elements.length) {
@@ -60,8 +60,17 @@
         }
 
         function animatedTop() {
-            animateDirection("top", 0, 140, false);
+            animateDirection("top", 0, 140, true);
         }
+
+        function animatedLeft() {
+            animateDirection("left", 60, 0);
+        }
+
+        function animatedRight() {
+            animateDirection("right", -60, 0);
+        }
+
 
         function animatedFade() {
             const fadedElements = gsap.utils.toArray(".transition-fade");
@@ -137,15 +146,6 @@
                 }
             });
         }
-
-        function animatedLeft() {
-            animateDirection("left", 60, 0);
-        }
-
-        function animatedRight() {
-            animateDirection("right", -60, 0);
-        }
-
         function animatedCounter() {
             const elementsWithCounterEffect = gsap.utils.toArray(".transition-count");
 
