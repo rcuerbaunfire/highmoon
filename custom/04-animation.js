@@ -199,6 +199,60 @@
                 }
             });
         }
+        
+        function animatedLines() {
+            const elements = gsap.utils.toArray($(".transition-per-line"));
+
+            if (elements.length) {
+                elements.forEach((el) => {
+                    const customTriggerDistance = $(el).data("trigger-distance");
+                    let triggerPreset = {};
+
+                    if (customTriggerDistance) {
+                        const customStInstance = ScrollTrigger.create({
+                            start: customTriggerDistance,
+                        });
+
+                        triggerPreset = {
+                            ...customStInstance.vars,
+                        };
+                    } else {
+                        triggerPreset = {
+                            ...stInstance.vars,
+                        };
+                    }
+
+                    const splitLines = new SplitText(el).lines;
+                    const lineWrapper = new SplitText(el, {
+                        linesClass: "overflow-hidden",
+                        reduceWhiteSpace: false
+                    });
+
+                    gsap.set(el, {
+                        autoAlpha: 1
+                    })
+
+                    // const splitLines = new SplitText(el, {
+                    //     type: "lines",
+                    //     linesClass: "overflow-hidden",
+                    //     lineThreshold: 20,
+                    // });
+
+                    gsap.from(splitLines, {
+                        ...defaultTweenProps,
+                        yPercent: 100,
+                        stagger: {
+                            each: 0.14,
+                        },
+                        duration: 0.8,
+                        scrollTrigger: {
+                            trigger: el,
+                            ...triggerPreset,
+                        },
+                    });
+                });
+            }
+        }
     };
 
     Animation.prototype.handleAccordion = function () {
