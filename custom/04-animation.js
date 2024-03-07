@@ -21,7 +21,6 @@
         
         animatedTop();
         animatedCounter();
-        animatedTopstagger();
         animatedFade();
         animatedLeft();
         animatedRight();
