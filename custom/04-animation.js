@@ -17,16 +17,34 @@
     };
 
     Animation.prototype.handleNav = function () {
-        const nav = $("nav");
+        const nav = $("navigation.w-nav");
         if (!nav.length) return;
 
-        ScrollTrigger.create({
-            trigger: "body",
-            start: "top -10%",
-            end: "bottom top",
-            invalidateOnRefresh: true,
-            toggleClass: { targets: ".navigation.w-nav", className: "active" }
-        });
+        function toggleNav() {
+            ScrollTrigger.create({
+                trigger: "body",
+                start: "top top",
+                onUpdate: (self) => {
+                    if (self.direction === 1) {
+                        hideHeader(true);
+                    } else {
+                        hideHeader(false);
+                    }
+                },
+            });
+
+            function hideHeader(state) {
+                if (state) {
+                    if (nav.hasClass("nav-hidden") || nav.hasClass("mob-active")) return;
+                    nav.addClass("nav-hidden");
+                } else {
+                    if (!nav.hasClass("nav-hidden")) return;
+                    nav.removeClass("nav-hidden");
+                }
+            }
+        }
+
+        toggleNav();
     };
 
     Animation.prototype.transitionPresets = function (parent = '') {
