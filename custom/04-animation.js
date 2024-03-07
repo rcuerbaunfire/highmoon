@@ -13,6 +13,20 @@
     Animation.prototype.init = function () {
         Animation.prototype.transitionPresets();
         Animation.prototype.handleAccordion();
+        Animation.prototype.handleNav();
+    };
+
+    Animation.prototype.handleNav = function () {
+        const nav = $("nav");
+        if (!nav.length) return;
+
+        ScrollTrigger.create({
+            trigger: "body",
+            start: "top -10%",
+            end: "bottom top",
+            invalidateOnRefresh: true,
+            toggleClass: { targets: ".nav-outer", className: "active" }
+        });
     };
 
     Animation.prototype.transitionPresets = function (parent = '') {
