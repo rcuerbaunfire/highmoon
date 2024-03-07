@@ -91,28 +91,15 @@
 		background: var(--cream);
 	}
 
-	.splide button.splide__arrow.splide__arrow--prev,
-	button.splide__arrow.splide__arrow--next {
-		background: transparent;
-		padding: 0;
-		opacity: 1 !important;
-	}
+    .owl-arrow-r:not(.disabled) .circ-cta.outline,
+    .owl-arrow-l:not(.disabled) .circ-cta.outline {
+        background: var(--cream);
+    }
 
-	.splide button:not([disabled]) .circ-cta.outline svg path {
-		fill: var(--navy);
-	}
-
-	.splide button:not([disabled]) .circ-cta.outline {
-		background: var(--cream);
-	}
-
-	.splide button:disabled .circ-cta.outline svg path {
-		fill: var(--cream);
-	}
-
-	ul.splide__pagination {
-		display: none;
-	}
+    .owl-arrow-r:not(.disabled) .circ-cta.outline svg path,
+    .owl-arrow-l:not(.disabled) .circ-cta.outline svg path {
+        fill: var(--navy);
+    }
 
 	.transition-top,
 	.transition-fade,
