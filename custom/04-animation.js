@@ -23,7 +23,7 @@
         function toggleNav() {
             ScrollTrigger.create({
                 trigger: "body",
-                start: "top top",
+                start: "top -10%",
                 onUpdate: (self) => {
                     if (self.direction === 1) {
                         hideHeader(true);
