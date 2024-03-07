@@ -25,7 +25,7 @@
             start: "top -10%",
             end: "bottom top",
             invalidateOnRefresh: true,
-            toggleClass: { targets: ".nav-outer", className: "active" }
+            toggleClass: { targets: ".navigation.w-nav", className: "active" }
         });
     };
 
