@@ -38,23 +38,24 @@
                 }
             });
 
-            carouselNext.click(function () {
-                carouselInstance.trigger("next.owl.carousel");
-            });
+            carouselInstance.on("initialized.owl.carousel", function (e) {
+                const nativePrev = self.find(".owl-prev");
+                const nativeNext = self.find(".owl-next"); 
+    
+                const carouselPrev = self.find(".owl-arrow-l");
+                const carouselNext = self.find(".owl-arrow-r"); 
 
-            carouselPrev.click(function () {
-                carouselInstance.trigger("prev.owl.carousel");
-            });
+                carouselNext.click(function () {
+                    carouselInstance.trigger("next.owl.carousel");
+                });
 
-            carouselPrev.addClass("disabled");
+                carouselPrev.click(function () {
+                    carouselInstance.trigger("prev.owl.carousel");
+                });
 
-            carouselInstance.on("initialized.owl.carousel", function (event) {
-                carouselInstance.on("changed.owl.carousel", function (event) {
-                    const nativePrev = self.find(".owl-prev");
-                    const nativeNext = self.find(".owl-next"); 
-        
-                    const carouselPrev = self.find(".owl-arrow-l");
-                    const carouselNext = self.find(".owl-arrow-r"); 
+                carouselPrev.addClass("disabled");
+
+                carouselInstance.on("changed.owl.carousel", function (e) {
     
                     if (nativePrev.hasClass("disabled")) {
                         carouselPrev.addClass("disabled");
@@ -69,8 +70,6 @@
                     }
                 });
             });
-
-            
         });
     };
 
