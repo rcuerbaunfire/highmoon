@@ -44,17 +44,17 @@
                 }
             });
 
-            carouselPrev.click(function () {
+            carouselNext.click(function () {
                 carouselInstance.trigger("next.owl.carousel");
             });
 
-            carouselNext.click(function () {
+            carouselPrev.click(function () {
                 carouselInstance.trigger("prev.owl.carousel");
             });
 
             carouselPrev.addClass("disabled");
 
-            carouselInstance.on("changed.owl.carousel", function (event) {
+            carouselInstance.on("change.owl.carousel", function (event) {
                 if (nativePrev.hasClass("disabled")) {
                     carouselPrev.addClass("disabled");
                 } else {
