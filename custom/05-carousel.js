@@ -19,12 +19,6 @@
             const self = $(this);
             const carousel = self.find(".owl-carousel");
 
-            const nativePrev = self.find(".owl-prev");
-            const nativeNext = self.find(".owl-next"); 
-
-            const carouselPrev = self.find(".owl-arrow-l");
-            const carouselNext = self.find(".owl-arrow-r"); 
-
             const carouselInstance = carousel.owlCarousel({
                 items: 3,
                 autoWidth: true,
@@ -54,19 +48,29 @@
 
             carouselPrev.addClass("disabled");
 
-            carouselInstance.on("change.owl.carousel", function (event) {
-                if (nativePrev.hasClass("disabled")) {
-                    carouselPrev.addClass("disabled");
-                } else {
-                    carouselPrev.removeClass("disabled");
-                }
-
-                if (nativeNext.hasClass("disabled")) {
-                    carouselNext.addClass("disabled");
-                } else {
-                    carouselNext.removeClass("disabled");
-                }
+            carouselInstance.on("initialized.owl.carousel", function (event) {
+                carouselInstance.on("changed.owl.carousel", function (event) {
+                    const nativePrev = self.find(".owl-prev");
+                    const nativeNext = self.find(".owl-next"); 
+        
+                    const carouselPrev = self.find(".owl-arrow-l");
+                    const carouselNext = self.find(".owl-arrow-r"); 
+    
+                    if (nativePrev.hasClass("disabled")) {
+                        carouselPrev.addClass("disabled");
+                    } else {
+                        carouselPrev.removeClass("disabled");
+                    }
+    
+                    if (nativeNext.hasClass("disabled")) {
+                        carouselNext.addClass("disabled");
+                    } else {
+                        carouselNext.removeClass("disabled");
+                    }
+                });
             });
+
+            
         });
     };
 
