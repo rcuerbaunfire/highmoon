@@ -21,7 +21,7 @@
         
         animatedTop();
         animatedCounter();
-        // animatedTopstagger();
+        animatedTopstagger();
         animatedFade();
         animatedLeft();
         animatedRight();
@@ -60,7 +60,7 @@
         }
 
         function animatedTop() {
-            animateDirection("top", 0, 140, true);
+            animateDirection("top", 0, 100, true);
         }
 
         function animatedLeft() {
@@ -70,7 +70,6 @@
         function animatedRight() {
             animateDirection("right", -60, 0);
         }
-
 
         function animatedFade() {
             const fadedElements = gsap.utils.toArray(".transition-fade");
@@ -146,6 +145,7 @@
                 }
             });
         }
+
         function animatedCounter() {
             const elementsWithCounterEffect = gsap.utils.toArray(".transition-count");
 
@@ -303,6 +303,8 @@
                 )
             }
         });
+
+        items[0].click();
     };
 
     app.Animation = Animation;

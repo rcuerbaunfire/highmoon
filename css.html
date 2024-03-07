@@ -1,0 +1,161 @@
+<script>
+	history.scrollRestoration = "manual";
+</script>
+
+<style>
+	:root {
+		--navy: #0a1f27;
+		--mint: #9fac9f;
+        --cream: #f0ece6;
+        --pale-navy: #2c3c40;
+	}
+
+	body {
+		-moz-font-feature-settings: "liga" on;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-feature-settings: "liga" on;
+		text-rendering: optimizeLegibility;
+	}
+
+	.circ-cta {
+		transition: background 0.3s ease-in-out;
+	}
+
+	.circ-cta svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.circ-cta.cta-light svg path {
+		fill: var(--navy);
+	}
+
+	.circ-cta.cta-dark svg path {
+		fill: var(--navy);
+	}
+
+	.circ-cta svg:first-of-type {
+		transform: translate(-60px, -50%);
+	}
+
+	.circ-cta svg {
+		transition: transform 0.65s cubic-bezier(0.475, 0.425, 0, 0.995);
+	}
+
+	.circ-trigger:hover .circ-cta svg:first-of-type,
+	.circ-cta:hover svg:first-of-type {
+		transform: translate(-50%, -50%);
+	}
+
+	.circ-trigger:hover .circ-cta svg:last-of-type,
+	.circ-cta:hover svg:last-of-type {
+		transform: translate(60px, -50%);
+	}
+
+	.circ-trigger:hover .circ-cta path,
+	.circ-cta:hover svg path {
+		fill: var(--navy);
+	}
+
+	.circ-trigger:hover .circ-cta,
+	.circ-cta:hover {
+		background: var(--mint);
+	}
+
+	.circ-trigger:hover .circ-cta.circ-to-white,
+	.circ-cta.circ-to-white:hover {
+		background: var(--cream);
+	}
+
+	.splide button.splide__arrow.splide__arrow--prev,
+	button.splide__arrow.splide__arrow--next {
+		background: transparent;
+		padding: 0;
+		opacity: 1 !important;
+	}
+
+	.splide button:not([disabled]) .circ-cta.outline svg path {
+		fill: var(--navy);
+	}
+
+	.splide button:not([disabled]) .circ-cta.outline {
+		background: var(--cream);
+	}
+
+	.splide button:disabled .circ-cta.outline svg path {
+		fill: var(--cream);
+	}
+
+	ul.splide__pagination {
+		display: none;
+	}
+
+	.transition-top,
+	.transition-fade,
+	.transition-per-line,
+	.transition-fade-default {
+		visibility: hidden;
+	}
+
+	.overflow-hidden {
+		overflow: hidden;
+	}
+
+	.hover-underslide {
+		position: relative;
+	}
+
+	.hover-underslide.hover-dark::before {
+		background: var(--navy);
+	}
+
+    .hover-underslide-trigger:hover .hover-underslide.hover-light,
+    .hover-underslide.hover-light:hover {
+		color: var(--cream);
+	}
+
+	.hover-underslide::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		left: 0;
+		background: white;
+		height: 1px;
+		transition: width 0.3s ease-in-out;
+	}
+
+	.hover-underslide.w--current:not(.bottom-nav-link)::before,
+	.hover-underslide:hover::before,
+	.hover-underslide-trigger:hover .hover-underslide::before {
+		width: 100%;
+	}
+
+	.approach-block {
+		transition: background 0.3s ease-out, border-color 0.3s ease-out;
+	}
+
+	.approach-icon svg path {
+		transition: stroke 0.3s ease-out;
+	}
+
+	.approach-heading {
+		transition: color 0.3s ease-out;
+	}
+
+	.approach-block:hover {
+		background: var(--mint);
+		border-color: var(--pale-navy);
+	}
+
+	.approach-block:hover .approach-icon svg path {
+		stroke: var(--navy);
+	}
+
+	.approach-block:hover .approach-heading {
+		color: var(--navy);
+	}
+</style>
