@@ -17,7 +17,7 @@
     };
 
     Animation.prototype.handleNav = function () {
-        const nav = $("navigation.w-nav");
+        const nav = $(".navigation.w-nav");
         if (!nav.length) return;
 
         function toggleNav() {
