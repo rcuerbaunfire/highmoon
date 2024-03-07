@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/rcuerbaunfire/highmoon/css/owl.css"/>
+<link rel="stylesheet" type="text/css" href="https://rcuerbaunfire.github.io/highmoon/css/owl.css"/>
 
 <script>
 	history.scrollRestoration = "manual";
@@ -86,6 +86,11 @@
 		background: var(--mint);
 	}
 
+    .owl-arrow-r,
+    .owl-arrow-l {
+        cursor: pointer;
+    }
+
 	.circ-trigger:hover .circ-cta.circ-to-white,
 	.circ-cta.circ-to-white:hover {
 		background: var(--cream);
@@ -94,11 +99,22 @@
     .owl-arrow-r:not(.disabled) .circ-cta.outline,
     .owl-arrow-l:not(.disabled) .circ-cta.outline {
         background: var(--cream);
+        border: none;
     }
 
     .owl-arrow-r:not(.disabled) .circ-cta.outline svg path,
     .owl-arrow-l:not(.disabled) .circ-cta.outline svg path {
         fill: var(--navy);
+    }
+
+    .owl-arrow-r:not(.disabled):hover .circ-cta.outline,
+    .owl-arrow-l:not(.disabled):hover .circ-cta.outline {
+        background: var(--mint);
+    }
+
+    .owl-arrow-r.disabled,
+    .owl-arrow-l.disabled {
+        pointer-events: none;
     }
 
 	.transition-top,

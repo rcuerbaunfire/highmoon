@@ -12,7 +12,7 @@
     };
 
     Carousel.prototype.resourceCarousel = function () {
-        const carousels = $(".resource-carousel");
+        const carousels = $(".resource-carousel, .advisor-carousel");
         if (!carousels.length) return;
 
         carousels.each(function () {
