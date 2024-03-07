@@ -56,7 +56,6 @@
                 carouselPrev.addClass("disabled");
 
                 carouselInstance.on("changed.owl.carousel", function (e) {
-    
                     if (nativePrev.hasClass("disabled")) {
                         carouselPrev.addClass("disabled");
                     } else {
