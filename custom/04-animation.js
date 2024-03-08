@@ -50,7 +50,7 @@
     Animation.prototype.transitionPresets = function (parent = '') {
         const stInstance = ScrollTrigger.create({ start: `top ${startingThreshold}%`, toggleActions: "play none none none", });
         const defaultTweenProps = { duration: 1.2, ease: Power2.easeOut };
-        
+
         animatedTop();
         animatedCounter();
         animatedFade();
@@ -230,7 +230,7 @@
                 }
             });
         }
-        
+
         function animatedLines() {
             const elements = gsap.utils.toArray($(".transition-per-line"));
 
@@ -299,40 +299,125 @@
                 self.addClass("active");
 
                 gsap.timeline()
-                .set(plusLine, {
-                    display: "none"
-                })
-                .fromTo(body,
-                    {
-                        height: 0,
-                        autoAlpha: 0,
-                    },
-                    {
-                        height: "auto",
-                        duration: 0.6,
-                        autoAlpha: 1,
-                        ease: Power2.easeOut,
-                        overwrite: true
-                    }
-                )
+                    .set(plusLine, {
+                        display: "none"
+                    })
+                    .fromTo(body,
+                        {
+                            height: 0,
+                            autoAlpha: 0,
+                        },
+                        {
+                            height: "auto",
+                            duration: 0.6,
+                            autoAlpha: 1,
+                            ease: Power2.easeOut,
+                            overwrite: true
+                        }
+                    )
 
             } else {
                 self.removeClass("active");
 
                 gsap.timeline()
-                .set(plusLine, {
-                    display: "block"
-                })
-                .to(body,
-                    {
-                        height: 0,
-                        duration: 0.6,
-                        ease: Power2.easeOut,
-                        overwrite: true,
-                        autoAlpha: 0,
-                    }
-                )
+                    .set(plusLine, {
+                        display: "block"
+                    })
+                    .to(body,
+                        {
+                            height: 0,
+                            duration: 0.6,
+                            ease: Power2.easeOut,
+                            overwrite: true,
+                            autoAlpha: 0,
+                        }
+                    )
             }
+        });
+
+        items[0].click();
+    };
+
+    Animation.prototype.handleLeaders = function () {
+        const items = $(".leader-item");
+        if (!items.length) return;
+
+        items.each(function () {
+            const self = $(this);
+            const open = self.find(".leader-button");
+            const popup = self.find(".leader-popup");
+            const panel = self.find(".leader-panel");
+            const close = self.find(".leader-popup-close");
+
+            open.click(function () {
+                app.Global.prototype.allowScroll(false);
+
+                gsap.timeline({ defaults: { ease: Power3.easeOut, overwrite: true } })
+                    .fromTo(popup,
+                        {
+                            autoAlpha: 0,
+                            pointerEvents: "none"
+                        },
+                        {
+                            autoAlpha: 1,
+                            duration: 0.6,
+                            pointerEvents: "auto"
+                        }
+                    )
+                    .fromTo(panel,
+                        {
+                            x: "100%",
+                        },
+                        {
+                            x: 0,
+                            duration: 0.6,
+                        },
+                        "<0.4"
+                    )
+            });
+
+            close.click(function () {
+
+            });
+
+            // if (!self.hasClass("active")) {
+            //     self.addClass("active");
+
+            //     gsap.timeline()
+            //     .set(plusLine, {
+            //         display: "none"
+            //     })
+            //     .fromTo(body,
+            //         {
+            //             height: 0,
+            //             autoAlpha: 0,
+            //         },
+            //         {
+            //             height: "auto",
+            //             duration: 0.6,
+            //             autoAlpha: 1,
+            //             ease: Power2.easeOut,
+            //             overwrite: true
+            //         }
+            //     )
+
+            // } else {
+            //     self.removeClass("active");
+
+            //     gsap.timeline()
+            //     .set(plusLine, {
+            //         display: "block"
+            //     })
+            //     .to(body,
+            //         {
+            //             height: 0,
+            //             duration: 0.6,
+            //             ease: Power2.easeOut,
+            //             overwrite: true,
+            //             autoAlpha: 0,
+            //         }
+            //     )
+            // }
         });
 
         items[0].click();

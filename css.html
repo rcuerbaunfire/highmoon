@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://rcuerbaunfire.github.io/highmoon/css/owl.css"/>
+<link rel="stylesheet" type="text/css" href="https://rcuerbaunfire.github.io/highmoon/css/owl.css" />
 
 <script>
 	history.scrollRestoration = "manual";
@@ -26,18 +26,18 @@
 		text-rendering: optimizeLegibility;
 	}
 
-    .nav-hidden {
-        transform: translateY(-124px);
-    }
+	.nav-hidden {
+		transform: translateY(-124px);
+	}
 
-    .nav-hidden + .sub-nav {
-        transform: translateY(-124px);
-    }
+	.nav-hidden + .sub-nav {
+		transform: translateY(-124px);
+	}
 
-    .nav-hidden,
-    .sub-nav {
-        transition: transform 0.3s ease-in-out;
-    }
+	.nav-hidden,
+	.sub-nav {
+		transition: transform 0.3s ease-in-out;
+	}
 
 	.circ-cta {
 		transition: background 0.3s ease-in-out;
@@ -86,36 +86,36 @@
 		background: var(--mint);
 	}
 
-    .owl-arrow-r,
-    .owl-arrow-l {
-        cursor: pointer;
-    }
+	.owl-arrow-r,
+	.owl-arrow-l {
+		cursor: pointer;
+	}
 
 	.circ-trigger:hover .circ-cta.circ-to-white,
 	.circ-cta.circ-to-white:hover {
 		background: var(--cream);
 	}
 
-    .owl-arrow-r:not(.disabled) .circ-cta.outline,
-    .owl-arrow-l:not(.disabled) .circ-cta.outline {
-        background: var(--cream);
-        border: none;
-    }
+	.owl-arrow-r:not(.disabled) .circ-cta.outline,
+	.owl-arrow-l:not(.disabled) .circ-cta.outline {
+		background: var(--cream);
+		border: none;
+	}
 
-    .owl-arrow-r:not(.disabled) .circ-cta.outline svg path,
-    .owl-arrow-l:not(.disabled) .circ-cta.outline svg path {
-        fill: var(--navy);
-    }
+	.owl-arrow-r:not(.disabled) .circ-cta.outline svg path,
+	.owl-arrow-l:not(.disabled) .circ-cta.outline svg path {
+		fill: var(--navy);
+	}
 
-    .owl-arrow-r:not(.disabled):hover .circ-cta.outline,
-    .owl-arrow-l:not(.disabled):hover .circ-cta.outline {
-        background: var(--mint);
-    }
+	.owl-arrow-r:not(.disabled):hover .circ-cta.outline,
+	.owl-arrow-l:not(.disabled):hover .circ-cta.outline {
+		background: var(--mint);
+	}
 
-    .owl-arrow-r.disabled,
-    .owl-arrow-l.disabled {
-        pointer-events: none;
-    }
+	.owl-arrow-r.disabled,
+	.owl-arrow-l.disabled {
+		pointer-events: none;
+	}
 
 	.transition-top,
 	.transition-fade,
@@ -183,39 +183,101 @@
 		color: var(--navy);
 	}
 
-    .resource-card {
-        transition: background 0.3s ease-in-out;
-    }
+	.resource-card {
+		transition: background 0.3s ease-in-out;
+	}
 
-    .resource-card-heading,
-    .resource-card-date,
-    .resource-card-cta-text {
-        transition: color 0.3s ease-in-out;
-    }
+	.resource-card-heading,
+	.resource-card-date,
+	.resource-card-cta-text {
+		transition: color 0.3s ease-in-out;
+	}
 
-    .resource-card-link {
-        transition: border-color 0.3s ease-in-out;
-    }
+	.resource-card-link {
+		transition: border-color 0.3s ease-in-out;
+	}
 
-    .resource-card-link svg path {
+	.resource-card-link svg path {
+		transition: fill 0.3s ease-in-out;
+	}
+
+	.resource-card:hover {
+		background: var(--mint);
+	}
+
+	.resource-card:hover .resource-card-heading,
+	.resource-card:hover .resource-card-cta-text,
+	.resource-card:hover .resource-card-date {
+		color: var(--navy);
+	}
+
+	.resource-card:hover .resource-card-link {
+		border-color: var(--navy);
+	}
+
+	.resource-card:hover .resource-card-link svg path {
+		fill: var(--navy);
+	}
+
+	.rte * {
+		color: #0a1f27;
+		line-height: 150%;
+	}
+
+    .rte h1,
+    .rte h2,
+	.rte h3 {
+		color: var(--Navy, #0a1f27);
+		font-family: "Be Vietnam Pro", sans-serif;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 135%;
+		margin-top: 28px;
+		margin-bottom: 28px;
+	}
+
+	.rte h5,
+	.rte h4 {
+		color: var(--Navy, #0a1f27);
+		font-family: "Caneladeck Trial", sans-serif;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+
+	.rte h6 {
+		color: var(--Navy, #0a1f27);
+		font-family: "Be Vietnam Pro", sans-serif;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 150%;
+	}
+
+	.rte p:empty {
+		display: none;
+	}
+
+	.rte p:not(:last-of-type) {
+		margin-bottom: 20px;
+	}
+
+	.rte li {
+		margin: 16px 0px;
+		line-height: inherit;
+	}
+
+	.next-article-container:empty {
+		display: none;
+	}
+
+    .leader-circ svg circle {
         transition: fill 0.3s ease-in-out;
     }
 
-    .resource-card:hover {
-        background: var(--mint);
-    }
-
-    .resource-card:hover .resource-card-heading,
-    .resource-card:hover .resource-card-cta-text,
-    .resource-card:hover .resource-card-date {
-        color: var(--navy);
-    }
-
-    .resource-card:hover .resource-card-link {
-        border-color: var(--navy);
-    }
-
-    .resource-card:hover .resource-card-link svg path {
-        fill: var(--navy);
-    }
+    .leader-circ:hover svg circle {
+		fill: var(--mint);
+	}
 </style>
