@@ -378,7 +378,23 @@
             });
 
             close.click(function () {
+                gsap.timeline({ defaults: { ease: Power3.easeOut, overwrite: true } })
+                .to(panel,
+                    {
+                        x: "100%",
+                        duration: 0.6,
+                    },
+                )
+                .to(popup,
+                    {
+                        autoAlpha: 0,
+                        pointerEvents: "none",
+                        duration: 0.6,
+                    },
+                    "<0.4"
+                );
 
+                app.Global.prototype.allowScroll(true);
             });
 
             // if (!self.hasClass("active")) {
