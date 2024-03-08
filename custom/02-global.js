@@ -61,14 +61,6 @@
         
     };
 
-    Global.prototype.allowScroll = function (state) {
-        if (state) {
-            $("html").attr("style", "overflow-y: scroll !important");
-        } else {
-            $("html").attr("style", "overflow-y: hidden !important");
-        }
-    };
-
     Global.prototype.refreshScrollTriggers = function () {
         const triggers = ScrollTrigger.getAll();
 

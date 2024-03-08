@@ -21,6 +21,13 @@
         const nav = $(".navigation.w-nav");
         if (!nav.length) return;
 
+        const burger = container.find(".hamburger");
+
+        burger.click(function () {
+            nav.toggleClass("mob-active");
+            $("html").toggleClass("disable-scrolling");
+        });
+
         function toggleNav() {
             ScrollTrigger.create({
                 trigger: "body",
@@ -351,7 +358,7 @@
             const close = self.find(".leader-popup-close");
 
             open.click(function () {
-                app.Global.prototype.allowScroll(false);
+                $("html").addClass("disable-scrolling");
 
                 gsap.timeline({ defaults: { ease: Power3.easeOut, overwrite: true } })
                     .fromTo(popup,
@@ -394,50 +401,9 @@
                     "<0.4"
                 );
 
-                app.Global.prototype.allowScroll(true);
+                $("html").removeClass("disable-scrolling");
             });
-
-            // if (!self.hasClass("active")) {
-            //     self.addClass("active");
-
-            //     gsap.timeline()
-            //     .set(plusLine, {
-            //         display: "none"
-            //     })
-            //     .fromTo(body,
-            //         {
-            //             height: 0,
-            //             autoAlpha: 0,
-            //         },
-            //         {
-            //             height: "auto",
-            //             duration: 0.6,
-            //             autoAlpha: 1,
-            //             ease: Power2.easeOut,
-            //             overwrite: true
-            //         }
-            //     )
-
-            // } else {
-            //     self.removeClass("active");
-
-            //     gsap.timeline()
-            //     .set(plusLine, {
-            //         display: "block"
-            //     })
-            //     .to(body,
-            //         {
-            //             height: 0,
-            //             duration: 0.6,
-            //             ease: Power2.easeOut,
-            //             overwrite: true,
-            //             autoAlpha: 0,
-            //         }
-            //     )
-            // }
         });
-
-        items[0].click();
     };
 
     app.Animation = Animation;
