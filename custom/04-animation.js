@@ -14,6 +14,7 @@
         Animation.prototype.transitionPresets();
         Animation.prototype.handleAccordion();
         Animation.prototype.handleNav();
+        Animation.prototype.handleLeaders();
     };
 
     Animation.prototype.handleNav = function () {
