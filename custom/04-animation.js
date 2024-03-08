@@ -21,7 +21,7 @@
         const nav = $(".navigation.w-nav");
         if (!nav.length) return;
 
-        const burger = container.find(".hamburger");
+        const burger = nav.find(".hamburger");
 
         burger.click(function () {
             nav.toggleClass("mob-active");
