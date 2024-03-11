@@ -88,12 +88,11 @@
             responsive: {
                 0: {
                     items: 3,
-                    margin: 60,
                     autoWidth: false,
                 },
                 1300: {
+                    items: 6,
                     autoWidth: true,
-                    margin: 60,
                 }
             }
         });
