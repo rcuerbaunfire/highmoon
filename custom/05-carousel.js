@@ -8,6 +8,7 @@
 
     Carousel.prototype.init = function () {
         Carousel.prototype.resourceCarousel();
+        Carousel.prototype.clientCarousel();
         app.Global.prototype.refreshScrollTriggers();
     };
 
@@ -67,6 +68,56 @@
                     carouselNext.removeClass("disabled");
                 }
             });
+        });
+    };
+
+    Carousel.prototype.clientCarousel = function () {
+        const carousel = $(".client-carousel");
+        if (!carousel.length) return;
+
+        carousel.owlCarousel({
+            dots: false,
+            nav: false,
+            loop: true,
+            margin: 0,
+            autoplay: true,
+            slideTransition: 'linear',
+            autoplayTimeout: 0,
+            autoplaySpeed: 12000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 3,
+                    autoWidth: false,
+                },
+                1300: {
+                    autoWidth: true,
+                }
+            }
+        });
+
+        let mm = gsap.matchMedia();
+
+        mm.add({
+            isDesktop: `(min-width: 768px)`,
+            isMobile: `(max-width: 767px)`,
+
+        }, (context) => {
+            let { isDesktop, isMobile } = context.conditions;
+
+            if (isDesktop) {
+                if (carousel) {
+                    carousel.trigger('refresh.owl.carousel');
+                }
+            }
+
+            if (isMobile) {
+                if (carousel) {
+                    carousel.trigger('refresh.owl.carousel');
+                }
+            }
+
+            return () => { }
         });
     };
 

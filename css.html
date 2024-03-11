@@ -1,313 +1,347 @@
 <link rel="stylesheet" type="text/css" href="https://rcuerbaunfire.github.io/highmoon/css/owl.css" />
 
 <script>
-	history.scrollRestoration = "manual";
+    history.scrollRestoration = "manual";
 </script>
 
 <style>
-	:root {
-		--navy: #0a1f27;
-		--mint: #9fac9f;
-		--cream: #f0ece6;
-		--pale-navy: #2c3c40;
-	}
+    :root {
+        --navy: #0a1f27;
+        --mint: #9fac9f;
+        --cream: #f0ece6;
+        --pale-navy: #2c3c40;
+    }
 
-	html {
-		overflow-y: scroll;
-		overflow-x: hidden;
-		max-width: 100vw;
-	}
+    html {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
 
-	html.disable-scrolling {
-		overflow-y: hidden !important;
-	}
+    html.disable-scrolling {
+        overflow-y: hidden !important;
+    }
 
-	body {
-		-moz-font-feature-settings: "liga" on;
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		font-feature-settings: "liga" on;
-		text-rendering: optimizeLegibility;
-	}
+    body {
+        -moz-font-feature-settings: "liga" on;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-feature-settings: "liga" on;
+        text-rendering: optimizeLegibility;
+    }
 
-	.nav-hidden {
-		transform: translateY(-124px);
-	}
+    .nav-hidden {
+        transform: translateY(-124px);
+    }
 
-	.nav-hidden + .sub-nav {
-		transform: translateY(-124px);
-	}
+    .nav-hidden+.sub-nav {
+        transform: translateY(-124px);
+    }
 
-	.nav-hidden,
-	.sub-nav {
-		transition: transform 0.3s ease-in-out;
-	}
+    .nav-hidden,
+    .sub-nav {
+        transition: transform 0.3s ease-in-out;
+    }
 
-	.circ-cta {
-		transition: background 0.3s ease-in-out;
-	}
+    .circ-cta {
+        transition: background 0.3s ease-in-out;
+    }
 
-	.circ-cta svg {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
+    .circ-cta svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-	.circ-cta.cta-light svg path {
-		fill: var(--navy);
-	}
+    .circ-cta.cta-light svg path {
+        fill: var(--navy);
+    }
 
-	.circ-cta.cta-dark svg path {
-		fill: var(--navy);
-	}
+    .circ-cta.cta-dark svg path {
+        fill: var(--navy);
+    }
 
-	.circ-cta svg:first-of-type {
-		transform: translate(-60px, -50%);
-	}
+    .circ-cta svg:first-of-type {
+        transform: translate(-60px, -50%);
+    }
 
-	.circ-cta svg {
-		transition: transform 0.65s cubic-bezier(0.475, 0.425, 0, 0.995);
-	}
+    .circ-cta svg {
+        transition: transform 0.65s cubic-bezier(0.475, 0.425, 0, 0.995);
+    }
 
-	.circ-trigger:hover .circ-cta svg:first-of-type,
-	.circ-cta:hover svg:first-of-type {
-		transform: translate(-50%, -50%);
-	}
+    .circ-trigger:hover .circ-cta svg:first-of-type,
+    .circ-cta:hover svg:first-of-type {
+        transform: translate(-50%, -50%);
+    }
 
-	.circ-trigger:hover .circ-cta svg:last-of-type,
-	.circ-cta:hover svg:last-of-type {
-		transform: translate(60px, -50%);
-	}
+    .circ-trigger:hover .circ-cta svg:last-of-type,
+    .circ-cta:hover svg:last-of-type {
+        transform: translate(60px, -50%);
+    }
 
-	.circ-trigger:hover .circ-cta path,
-	.circ-cta:hover svg path {
-		fill: var(--navy);
-	}
+    .circ-trigger:hover .circ-cta path,
+    .circ-cta:hover svg path {
+        fill: var(--navy);
+    }
 
-	.circ-trigger:hover .circ-cta,
-	.circ-cta:hover {
-		background: var(--mint);
-	}
+    .circ-trigger:hover .circ-cta,
+    .circ-cta:hover {
+        background: var(--mint);
+    }
 
-	.owl-arrow-r,
-	.owl-arrow-l {
-		cursor: pointer;
-	}
+    .owl-arrow-r,
+    .owl-arrow-l {
+        cursor: pointer;
+    }
 
-	.circ-trigger:hover .circ-cta.circ-to-white,
-	.circ-cta.circ-to-white:hover {
-		background: var(--cream);
-	}
+    .circ-trigger:hover .circ-cta.circ-to-white,
+    .circ-cta.circ-to-white:hover {
+        background: var(--cream);
+    }
 
-	.owl-arrow-r:not(.disabled) .circ-cta.outline,
-	.owl-arrow-l:not(.disabled) .circ-cta.outline {
-		background: var(--cream);
-		border: none;
-	}
+    .owl-arrow-r:not(.disabled) .circ-cta.outline,
+    .owl-arrow-l:not(.disabled) .circ-cta.outline {
+        background: var(--cream);
+        border: none;
+    }
 
-	.owl-arrow-r:not(.disabled) .circ-cta.outline svg path,
-	.owl-arrow-l:not(.disabled) .circ-cta.outline svg path {
-		fill: var(--navy);
-	}
+    .owl-arrow-r:not(.disabled) .circ-cta.outline svg path,
+    .owl-arrow-l:not(.disabled) .circ-cta.outline svg path {
+        fill: var(--navy);
+    }
 
-	.owl-arrow-r:not(.disabled):hover .circ-cta.outline,
-	.owl-arrow-l:not(.disabled):hover .circ-cta.outline {
-		background: var(--mint);
-	}
+    .owl-arrow-r:not(.disabled):hover .circ-cta.outline,
+    .owl-arrow-l:not(.disabled):hover .circ-cta.outline {
+        background: var(--mint);
+    }
 
-	.owl-arrow-r.disabled,
-	.owl-arrow-l.disabled {
-		pointer-events: none;
-	}
+    .owl-arrow-r.disabled,
+    .owl-arrow-l.disabled {
+        pointer-events: none;
+    }
 
-	.transition-top,
-	.transition-fade,
-	.transition-per-line,
-	.transition-fade-default {
-		visibility: hidden;
-	}
+    .transition-top,
+    .transition-fade,
+    .transition-per-line,
+    .transition-fade-default {
+        visibility: hidden;
+    }
 
-	.overflow-hidden {
-		overflow: hidden;
-	}
+    .overflow-hidden {
+        overflow: hidden;
+    }
 
-	.hover-underslide {
-		position: relative;
-	}
+    .hover-underslide {
+        position: relative;
+    }
 
-	.hover-underslide.hover-dark::before {
-		background: var(--navy);
-	}
+    .hover-underslide.hover-dark::before {
+        background: var(--navy);
+    }
 
-	.hover-underslide-trigger:hover .hover-underslide.hover-light,
-	.hover-underslide.hover-light:hover {
-		color: var(--cream);
-	}
+    .hover-underslide-trigger:hover .hover-underslide.hover-light,
+    .hover-underslide.hover-light:hover {
+        color: var(--cream);
+    }
 
-	.hover-underslide::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		width: 0;
-		left: 0;
-		background: white;
-		height: 1px;
-		transition: width 0.3s ease-in-out;
-	}
+    .hover-underslide::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        left: 0;
+        background: white;
+        height: 1px;
+        transition: width 0.3s ease-in-out;
+    }
 
-	.hover-underslide.w--current:not(.bottom-nav-link)::before,
-	.hover-underslide:hover::before,
-	.hover-underslide-trigger:hover .hover-underslide::before {
-		width: 100%;
-	}
+    .hover-underslide.w--current:not(.bottom-nav-link)::before,
+    .hover-underslide:hover::before,
+    .hover-underslide-trigger:hover .hover-underslide::before {
+        width: 100%;
+    }
 
-	.approach-block {
-		transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
-	}
+    .approach-block {
+        transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
 
-	.approach-icon svg path {
-		transition: stroke 0.3s ease-in-out;
-	}
+    .approach-icon svg path {
+        transition: stroke 0.3s ease-in-out;
+    }
 
-	.approach-heading {
-		transition: color 0.3s ease-in-out;
-	}
+    .approach-heading {
+        transition: color 0.3s ease-in-out;
+    }
 
-	.approach-block:hover {
-		background: var(--mint);
-		border-color: var(--pale-navy);
-	}
+    .approach-block:hover {
+        background: var(--mint);
+        border-color: var(--pale-navy);
+    }
 
-	.approach-block:hover .approach-icon svg path {
-		stroke: var(--navy);
-	}
+    .approach-block:hover .approach-icon svg path {
+        stroke: var(--navy);
+    }
 
-	.approach-block:hover .approach-heading {
-		color: var(--navy);
-	}
+    .approach-block:hover .approach-heading {
+        color: var(--navy);
+    }
 
-	.resource-card {
-		transition: background 0.3s ease-in-out;
-	}
+    .resource-card {
+        transition: background 0.3s ease-in-out;
+    }
 
-	.resource-card-heading,
-	.resource-card-date,
-	.resource-card-cta-text {
-		transition: color 0.3s ease-in-out;
-	}
+    .resource-card-heading,
+    .resource-card-date,
+    .resource-card-cta-text {
+        transition: color 0.3s ease-in-out;
+    }
 
-	.resource-card-link {
-		transition: border-color 0.3s ease-in-out;
-	}
+    .resource-card-link {
+        transition: border-color 0.3s ease-in-out;
+    }
 
-	.resource-card-link svg path {
-		transition: fill 0.3s ease-in-out;
-	}
+    .resource-card-link svg path {
+        transition: fill 0.3s ease-in-out;
+    }
 
-	.resource-card:hover {
-		background: var(--mint);
-	}
+    .resource-card:hover {
+        background: var(--mint);
+    }
 
-	.resource-card:hover .resource-card-heading,
-	.resource-card:hover .resource-card-cta-text,
-	.resource-card:hover .resource-card-date {
-		color: var(--navy);
-	}
+    .resource-card:hover .resource-card-heading,
+    .resource-card:hover .resource-card-cta-text,
+    .resource-card:hover .resource-card-date {
+        color: var(--navy);
+    }
 
-	.resource-card:hover .resource-card-link {
-		border-color: var(--navy);
-	}
+    .resource-card:hover .resource-card-link {
+        border-color: var(--navy);
+    }
 
-	.resource-card:hover .resource-card-link svg path {
-		fill: var(--navy);
-	}
+    .resource-card:hover .resource-card-link svg path {
+        fill: var(--navy);
+    }
 
-	.rte * {
-		color: #0a1f27;
-		line-height: 150%;
-	}
+    .rte * {
+        color: #0a1f27;
+        line-height: 150%;
+    }
 
-	.rte h1,
-	.rte h2,
-	.rte h3 {
-		color: var(--Navy, #0a1f27);
-		font-family: "Be Vietnam Pro", sans-serif;
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: 135%;
-		margin-top: 28px;
-		margin-bottom: 28px;
-	}
+    .rte h1,
+    .rte h2,
+    .rte h3 {
+        color: var(--Navy, #0a1f27);
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 135%;
+        margin-top: 28px;
+        margin-bottom: 28px;
+    }
 
-	.rte h5,
-	.rte h4 {
-		color: var(--Navy, #0a1f27);
-		font-family: "Caneladeck Trial", sans-serif;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: normal;
-	}
+    .rte h5,
+    .rte h4 {
+        color: var(--Navy, #0a1f27);
+        font-family: "Caneladeck Trial", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
 
-	.rte h6 {
-		color: var(--Navy, #0a1f27);
-		font-family: "Be Vietnam Pro", sans-serif;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 300;
-		line-height: 150%;
-	}
+    .rte h6 {
+        color: var(--Navy, #0a1f27);
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+    }
 
-	.rte p:empty {
-		display: none;
-	}
+    .rte p:empty {
+        display: none;
+    }
 
-	.rte p:not(:last-of-type) {
-		margin-bottom: 20px;
-	}
+    .rte p:not(:last-of-type) {
+        margin-bottom: 20px;
+    }
 
-	.rte li {
-		margin: 16px 0px;
-		line-height: inherit;
-	}
+    .rte li {
+        margin: 16px 0px;
+        line-height: inherit;
+    }
 
-	.next-article-container:empty {
-		display: none;
-	}
+    .next-article-container:empty {
+        display: none;
+    }
 
-	.leader-circ svg circle {
-		transition: fill 0.3s ease-in-out;
-	}
+    .leader-circ svg circle {
+        transition: fill 0.3s ease-in-out;
+    }
 
-	.leader-circ:hover svg circle {
-		fill: var(--mint);
-	}
+    .leader-circ:hover svg circle {
+        fill: var(--mint);
+    }
 
-	.hamburger svg path {
-		transition-property: transform;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		transition-duration: 300ms;
-	}
+    .hamburger svg line {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+    }
 
-	.navigation.w-nav.mob-active .hamburger svg {
-		overflow: visible;
-	}
+    .navigation.w-nav.mob-active .hamburger svg {
+        overflow: visible;
+    }
 
-	.navigation.w-nav.mob-active .hamburger svg path {
-		stroke: #ffffff;
-	}
+    .navigation.w-nav.mob-active .hamburger svg line:nth-child(1) {
+        transform: rotate(45deg) translate(3px, -2.5px);
+    }
 
-	.navigation.w-nav.mob-active .hamburger svg path:nth-child(1) {
-		transform: rotate(45deg) translate(1px, -7px);
-	}
+    .navigation.w-nav.mob-active .hamburger svg line:nth-child(2) {
+        display: none;
+    }
 
-	.navigation.w-nav.mob-active .hamburger svg path:nth-child(2) {
-		display: none;
-	}
+    .navigation.w-nav.mob-active .hamburger svg line:nth-child(3) {
+        transform: rotate(-45deg) translate(-9px, -2.5px);
+    }
 
-	.navigation.w-nav.mob-active .hamburger svg path:nth-child(3) {
-		transform: rotate(-45deg) translate(-10px, 2px);
-	}
+    .navigation.w-nav.mob-active .nav-menu {
+        display: flex;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    [class^='line-clamp-'],
+    [class*=' line-clamp-'] {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    .line-clamp-1 {
+        -webkit-line-clamp: 1;
+    }
+
+    .line-clamp-2 {
+        -webkit-line-clamp: 2;
+    }
+
+    .line-clamp-3 {
+        -webkit-line-clamp: 3;
+    }
+
+    .line-clamp-4 {
+        -webkit-line-clamp: 4;
+    }
 </style>
