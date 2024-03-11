@@ -86,7 +86,7 @@
                     window.location.href;
 
             } else if (self.hasClass("facebook")) {
-                "https://www.facebook.com/sharer/sharer.php?u=" +
+                sharingLink = "https://www.facebook.com/sharer/sharer.php?u=" +
                 window.location.href;
                 
             } else if (self.hasClass("mail")) {
