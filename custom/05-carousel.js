@@ -79,50 +79,50 @@
             carousel.children().clone().appendTo(carousel);
         }
 
-        // carousel.owlCarousel({
-        //     dots: false,
-        //     nav: false,
-        //     loop: true,
-        //     margin: 60,
-        //     autoplay: true,
-        //     slideTransition: 'linear',
-        //     autoplayTimeout: 0,
-        //     autoplaySpeed: 12000,
-        //     autoplayHoverPause: false,
-        //     responsive: {
-        //         0: {
-        //             items: 3,
-        //             autoWidth: false,
-        //         },
-        //         1300: {
-        //             autoWidth: true,
-        //         }
-        //     }
-        // });
+        carousel.owlCarousel({
+            dots: false,
+            nav: false,
+            loop: true,
+            margin: 60,
+            autoplay: true,
+            slideTransition: 'linear',
+            autoplayTimeout: 0,
+            autoplaySpeed: 12000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 3,
+                    autoWidth: false,
+                },
+                1300: {
+                    autoWidth: true,
+                }
+            }
+        });
 
-        // let mm = gsap.matchMedia();
+        let mm = gsap.matchMedia();
 
-        // mm.add({
-        //     isDesktop: `(min-width: 768px)`,
-        //     isMobile: `(max-width: 767px)`,
+        mm.add({
+            isDesktop: `(min-width: 768px)`,
+            isMobile: `(max-width: 767px)`,
 
-        // }, (context) => {
-        //     let { isDesktop, isMobile } = context.conditions;
+        }, (context) => {
+            let { isDesktop, isMobile } = context.conditions;
 
-        //     if (isDesktop) {
-        //         if (carousel) {
-        //             carousel.trigger('refresh.owl.carousel');
-        //         }
-        //     }
+            if (isDesktop) {
+                if (carousel) {
+                    carousel.trigger('refresh.owl.carousel');
+                }
+            }
 
-        //     if (isMobile) {
-        //         if (carousel) {
-        //             carousel.trigger('refresh.owl.carousel');
-        //         }
-        //     }
+            if (isMobile) {
+                if (carousel) {
+                    carousel.trigger('refresh.owl.carousel');
+                }
+            }
 
-        //     return () => { }
-        // });
+            return () => { }
+        });
     };
 
     app.Carousel = Carousel;
