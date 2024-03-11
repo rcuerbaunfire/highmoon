@@ -21,7 +21,6 @@
             const carousel = self.find(".owl-carousel");
 
             const carouselInstance = carousel.owlCarousel({
-                items: 3,
                 autoWidth: true,
                 nav: true,
                 margin: 20,
@@ -31,9 +30,11 @@
                 navRewind: false,
                 responsive: {
                     0: {
+                        items: 1,
                         margin: 16,
                     },
-                    768: {
+                    1300: {
+                        items: 3,
                         margin: 20,
                     },
                 }
