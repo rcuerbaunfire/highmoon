@@ -79,7 +79,7 @@
             dots: false,
             nav: false,
             loop: true,
-            margin: 0,
+            margin: 60,
             autoplay: true,
             slideTransition: 'linear',
             autoplayTimeout: 0,
@@ -88,10 +88,12 @@
             responsive: {
                 0: {
                     items: 3,
+                    margin: 60,
                     autoWidth: false,
                 },
                 1300: {
                     autoWidth: true,
+                    margin: 60,
                 }
             }
         });
