@@ -18,6 +18,8 @@
 	-ms-touch-action: pan-Y;
 	touch-action: manipulation;
 	-moz-backface-visibility: hidden;
+    display: flex;
+    align-items: center;
 }
 .owl-carousel .owl-stage:after {
 	content: ".";
