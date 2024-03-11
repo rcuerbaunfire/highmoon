@@ -75,6 +75,10 @@
         const carousel = $(".client-carousel");
         if (!carousel.length) return;
 
+        for (let index = 0; index < 2; index++) {
+            carousel.children().clone().appendTo(carousel);
+        }
+
         carousel.owlCarousel({
             dots: false,
             nav: false,
@@ -91,7 +95,6 @@
                     autoWidth: false,
                 },
                 1300: {
-                    items: 6,
                     autoWidth: true,
                 }
             }
