@@ -58,7 +58,7 @@
     const smallScreens = tablet() || mobile();
 
     Global.prototype.init = function () {
-        
+        Global.prototype.socialSharing();
     };
 
     Global.prototype.refreshScrollTriggers = function () {
@@ -66,6 +66,34 @@
 
         triggers.forEach(trigger => {
             trigger.refresh(true);
+        });
+    };
+
+    Global.prototype.socialSharing = function () {
+        const items = $(".social-link");
+        if (!items.length) return;
+
+        items.each(function (index) {
+            const self = $(this);
+            let sharingLink;
+
+            if (self.hasClass("twitter")) {
+                sharingLink = "https://twitter.com/share?url=" + window.location.href;
+
+            } else if (self.hasClass("linkedin")) {
+                sharingLink =
+                    "https://www.linkedin.com/shareArticle?mini=true&url=" +
+                    window.location.href;
+
+            } else if (self.hasClass("facebook")) {
+                "https://www.facebook.com/sharer/sharer.php?u=" +
+                window.location.href;
+                
+            } else if (self.hasClass("mail")) {
+                sharingLink = "mailto:?&body=" + window.location.href;
+            }
+
+            self.attr("href", sharingLink);
         });
     };
 
