@@ -52,7 +52,7 @@
             }
         }
 
-        toggleNav();
+        // toggleNav();
     };
 
     Animation.prototype.transitionPresets = function (parent = '') {
