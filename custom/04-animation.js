@@ -155,41 +155,41 @@
                     `);
                 }
 
-                // const tl = gsap.timeline({
-                //     scrollTrigger: {
-                //         trigger: self,
-                //         ...stInstance.vars,
-                //     }
-                // });
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: self,
+                        ...stInstance.vars,
+                    }
+                });
 
-                // items.each(function (index) {
-                //     const subSelf = $(this);
+                items.each(function (index) {
+                    const subSelf = $(this);
 
-                //     if (index == 0) {
-                //         tl.set(subSelf, {
-                //             opacity: 0,
-                //         })
-                //     } else {
-                //         tl.set(items[index - 1], {
-                //             opacity: 0,
-                //         })
-                //     }
+                    if (index == 0) {
+                        tl.set(subSelf, {
+                            opacity: 0,
+                        })
+                    } else {
+                        tl.set(items[index - 1], {
+                            opacity: 0,
+                        })
+                    }
 
-                //     tl.to(subSelf, {
-                //         opacity: 1,
-                //         ease: "Power1.easeOut",
-                //         duration: 0.24
-                //     }, "<0.1")
-                // });
+                    tl.to(subSelf, {
+                        opacity: 1,
+                        ease: "Power1.easeOut",
+                        duration: 0.24
+                    }, "<0.1")
+                });
 
-                // gsap.set(self.find(".stepped-item:not(first-child)"), {
-                //     top: 0,
-                //     left: 0,
-                //     height: "100%",
-                //     width: "100%",
-                //     position: "absolute",
-                //     opacity: 0
-                // });
+                gsap.set(self.find(".stepped-item:not(first-child)"), {
+                    top: 0,
+                    left: 0,
+                    height: "100%",
+                    width: "100%",
+                    position: "absolute",
+                    opacity: 0
+                });
             });
         }
 
