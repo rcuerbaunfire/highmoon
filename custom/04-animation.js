@@ -175,7 +175,16 @@
                         ease: "Power1.easeOut",
                         duration: 0.24
                     }, "<0.1")
-                })
+                });
+
+                gsap.set(self.find(".stepped-item:not(first-child)"), {
+                    top: 0,
+                    left: 0,
+                    height: "100%",
+                    width: "100%",
+                    position: "absolute",
+                    opacity: 0
+                });
             });
         }
 
