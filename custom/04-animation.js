@@ -144,7 +144,7 @@
                 for (let index = 1; index < steps; index++) {
                     self.prepend(`
                         <div class="stepped-item">
-                            <div class="stepped-amount">${(amount / (index * steps)).toFixed(0)}</div>
+                            <div class="stepped-amount">${(amount / steps).toFixed(0) * index}</div>
                             <div class="stepped-sign">${suffix}</div>
                         </div>
                     `);
