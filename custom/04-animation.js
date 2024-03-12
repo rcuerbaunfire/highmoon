@@ -187,7 +187,7 @@
 
                     tl.to(subSelf, {
                         opacity: 1,
-                        ease: "Power1.easeOut",
+                        ease: "none",
                         duration: 0.2
                     }, "<0.1")
                 });
