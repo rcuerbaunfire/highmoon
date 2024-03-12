@@ -180,16 +180,16 @@
                             opacity: 0,
                         })
                     } else {
-                        tl.set(items[index - 1], {
+                        tl.to(items[index - 1], {
                             opacity: 0,
-                        })
+                        }, "<0.1")
                     }
 
                     tl.to(subSelf, {
                         opacity: 1,
                         ease: "Power1.easeOut",
                         duration: 0.24
-                    }, "<0.1")
+                    }, "<0.2")
                 });
             });
         }
