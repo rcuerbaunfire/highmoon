@@ -139,7 +139,7 @@
                 const self = $(this);
                 const items = self.children();
                 const amount = self.find(".stepped-amount").text();
-                const suffix = self.find(".stepped-suffix").text();
+                const suffix = self.find(".stepped-sign").text();
 
                 for (let index = 1; index < steps; index++) {
                     self.prepend(`
