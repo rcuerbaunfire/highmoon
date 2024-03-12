@@ -181,6 +181,8 @@
                         })
                     } else {
                         tl.to(items[index - 1], {
+                            duration: 0.14,
+                            ease: "none",
                             opacity: 0,
                         }, "<0.1")
 
