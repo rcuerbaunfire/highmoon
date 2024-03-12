@@ -142,7 +142,6 @@
 
             elementsWithCounterEffect.each(function () {
                 const self = $(this);
-                const items = self.children();
                 const amount = parseFloat(self.find(".stepped-amount").text().replace(/,/g, ''));
                 const suffix = self.find(".stepped-sign").text();
 
@@ -154,6 +153,8 @@
                         </div>
                     `);
                 }
+
+                const items = self.children();
 
                 const tl = gsap.timeline({
                     scrollTrigger: {
@@ -173,13 +174,13 @@
                         tl.set(items[index - 1], {
                             opacity: 0,
                         })
-                    }
 
-                    tl.to(subSelf, {
-                        opacity: 1,
-                        ease: "Power1.easeOut",
-                        duration: 0.24
-                    }, "<0.1")
+                        tl.to(subSelf, {
+                            opacity: 1,
+                            ease: "Power1.easeOut",
+                            duration: 0.24
+                        }, "<0.1")
+                    }
                 });
 
                 gsap.set(self.find(".stepped-item:not(:first-child)"), {
