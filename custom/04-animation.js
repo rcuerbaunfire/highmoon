@@ -182,7 +182,7 @@
                     }, "<0.1")
                 });
 
-                gsap.set(self.find(".stepped-item:not(first-child)"), {
+                gsap.set(self.find(".stepped-item:not(:first-child)"), {
                     top: 0,
                     left: 0,
                     height: "100%",
