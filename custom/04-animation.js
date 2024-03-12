@@ -132,56 +132,50 @@
         }
 
         function animatedCounter() {
-            const elementsWithCounterEffect = gsap.utils.toArray(".transition-count");
+            const elementsWithCounterEffect = $(".transition-count");
+            const steps = 3;
 
-            const floatNum = (val, decimals, dec_point, thousands_sep) => {
-                dec_point = typeof dec_point !== 'undefined' ? dec_point : '.';
-                thousands_sep = typeof thousands_sep !== 'undefined' ? thousands_sep : ',';
+            elementsWithCounterEffect.each(function () {
+                const self = $(this);
+                const items = self.children();
+                const amount = self.find(".stepped-amount").text();
+                const suffix = self.find(".stepped-suffix").text();
 
-                const parts = val.toFixed(decimals).split('.');
-                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_sep);
-
-                return parts.join(dec_point);
-            }
-
-            const wholeNum = (val) => {
-                const parts = val.toString().split(".");
-                return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            }
-
-            elementsWithCounterEffect.forEach((el) => {
-                const textContainer = $(el);
-                const targetValue = parseFloat(textContainer.text().replace(/,/g, ''));
-
-                let counter = { val: 0 };
-
-                if (Number.isInteger(targetValue)) {
-                    gsap.to(counter, {
-                        duration: 1.4,
-                        val: targetValue,
-                        onUpdate: function () {
-                            textContainer.text(wholeNum(counter.val));
-                        },
-                        ease: Power3.easeOut,
-                        scrollTrigger: {
-                            trigger: el,
-                            ...stInstance.vars,
-                        },
-                    });
-                } else {
-                    gsap.to(counter, {
-                        duration: 1.4,
-                        val: targetValue,
-                        onUpdate: function () {
-                            textContainer.text(floatNum(counter.val, 2));
-                        },
-                        ease: Power3.easeOut,
-                        scrollTrigger: {
-                            trigger: el,
-                            ...stInstance.vars,
-                        },
-                    });
+                for (let index = 1; index < steps; index++) {
+                    self.prepend(`
+                        <div class="stepped-item">
+                            <div class="stepped-amount">${(amount / (index * steps)).toFixed(0)}</div>
+                            <div class="stepped-suffix">${suffix}</div>
+                        </div>
+                    `);
                 }
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: self,
+                        ...stInstance.vars,
+                    }
+                });
+
+                items.each(function (index) {
+                    const subSelf = $(this);
+
+                    if (index == 0) {
+                        tl.set(subSelf, {
+                            opacity: 0,
+                        })
+                    } else {
+                        tl.set(items[index - 1], {
+                            opacity: 0,
+                        })
+                    }
+
+                    tl.to(subSelf, {
+                        opacity: 1,
+                        ease: "Power1.easeOut",
+                        duration: 0.24
+                    }, "<0.1")
+                })
             });
         }
 
@@ -386,20 +380,20 @@
 
             close.click(function () {
                 gsap.timeline({ defaults: { ease: Power3.easeOut, overwrite: true } })
-                .to(panel,
-                    {
-                        x: "100%",
-                        duration: 0.6,
-                    },
-                )
-                .to(popup,
-                    {
-                        autoAlpha: 0,
-                        pointerEvents: "none",
-                        duration: 0.6,
-                    },
-                    "<0.4"
-                );
+                    .to(panel,
+                        {
+                            x: "100%",
+                            duration: 0.6,
+                        },
+                    )
+                    .to(popup,
+                        {
+                            autoAlpha: 0,
+                            pointerEvents: "none",
+                            duration: 0.6,
+                        },
+                        "<0.4"
+                    );
 
                 $("html").removeClass("disable-scrolling");
             });
