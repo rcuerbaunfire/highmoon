@@ -146,11 +146,10 @@
                 const suffix = self.find(".stepped-sign").text();
 
                 for (let index = (steps - 1); index >= 0; index--) {
-                    const num = index == 0 ? 0 : wholeNum((amount / steps).toFixed(0) * index);
+                    const num = index == 0 ? 0 : ((amount / steps).toFixed(0) * index);
                     self.prepend(`
                         <div class="stepped-item">
                             <div class="stepped-amount">${num}</div>
-                            <div class="stepped-sign">${suffix}</div>
                         </div>
                     `);
                 }
