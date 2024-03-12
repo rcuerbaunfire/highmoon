@@ -138,7 +138,7 @@
             elementsWithCounterEffect.each(function () {
                 const self = $(this);
                 const items = self.children();
-                const amount = self.find(".stepped-amount").text();
+                const amount = parseFloat(self.find(".stepped-amount").text().replace(/,/g, ''));
                 const suffix = self.find(".stepped-sign").text();
 
                 for (let index = 1; index < steps; index++) {
