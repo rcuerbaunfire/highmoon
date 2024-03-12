@@ -146,7 +146,7 @@
                 const amount = parseFloat(self.find(".stepped-amount").text().replace(/,/g, ''));
                 const suffix = self.find(".stepped-sign").text();
 
-                for (let index = (steps - 1); index != 1; index--) {
+                for (let index = (steps - 1); index > 0; index--) {
                     self.prepend(`
                         <div class="stepped-item">
                             <div class="stepped-amount">${wholeNum((amount / steps).toFixed(0) * index)}</div>
