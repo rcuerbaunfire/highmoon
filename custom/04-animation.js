@@ -183,13 +183,13 @@
                         tl.to(items[index - 1], {
                             opacity: 0,
                         }, "<0.1")
-                    }
 
-                    tl.to(subSelf, {
-                        opacity: 1,
-                        ease: "none",
-                        duration: 0.2
-                    }, "<0.1")
+                        tl.to(subSelf, {
+                            opacity: 1,
+                            ease: "none",
+                            duration: 0.2
+                        }, "<0.1")
+                    }
                 });
             });
         }
