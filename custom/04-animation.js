@@ -133,7 +133,7 @@
 
         function animatedCounter() {
             const elementsWithCounterEffect = $(".transition-count");
-            const steps = 3;
+            const steps = 2;
 
             const wholeNum = (val) => {
                 const parts = val.toString().split(".");
@@ -145,10 +145,11 @@
                 const amount = parseFloat(self.find(".stepped-amount").text().replace(/,/g, ''));
                 const suffix = self.find(".stepped-sign").text();
 
-                for (let index = (steps - 1); index > 0; index--) {
+                for (let index = (steps - 1); index >= 0; index--) {
+                    const num = index == 0 ? 0 : wholeNum((amount / steps).toFixed(0) * index);
                     self.prepend(`
                         <div class="stepped-item">
-                            <div class="stepped-amount">${wholeNum((amount / steps).toFixed(0) * index)}</div>
+                            <div class="stepped-amount">${num}</div>
                             <div class="stepped-sign">${suffix}</div>
                         </div>
                     `);
