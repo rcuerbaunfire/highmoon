@@ -367,8 +367,21 @@
             const popup = self.find(".leader-popup");
             const panel = self.find(".leader-panel");
             const close = self.find(".leader-popup-close");
+            const overlay = self.find(".leader-popup");
 
             open.click(function () {
+                openPanel();
+            });
+
+            close.click(function () {
+                closePanel();
+            });
+
+            overlay.click(function () {
+                closePanel();
+            });
+
+            function openPanel() {
                 $("html").addClass("disable-scrolling");
 
                 gsap.timeline({ defaults: { ease: Power3.easeOut, overwrite: true } })
@@ -393,9 +406,9 @@
                         },
                         "<0.4"
                     )
-            });
+            }
 
-            close.click(function () {
+            function closePanel() {
                 gsap.timeline({ defaults: { ease: Power3.easeOut, overwrite: true } })
                     .to(panel,
                         {
@@ -413,7 +426,7 @@
                     );
 
                 $("html").removeClass("disable-scrolling");
-            });
+            }
         });
     };
 

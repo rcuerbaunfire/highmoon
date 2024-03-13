@@ -84,7 +84,7 @@
             dots: false,
             nav: false,
             loop: true,
-            margin: 60,
+            margin: 40,
             autoplay: true,
             slideTransition: 'linear',
             autoplayTimeout: 0,
@@ -95,7 +95,7 @@
                     items: 3,
                     autoWidth: false,
                 },
-                1300: {
+                768: {
                     autoWidth: true,
                 }
             }
