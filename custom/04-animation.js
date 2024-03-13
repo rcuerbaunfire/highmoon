@@ -367,7 +367,7 @@
             const popup = self.find(".leader-popup");
             const panel = self.find(".leader-panel");
             const close = self.find(".leader-popup-close");
-            const overlay = self.find(".leader-popup");
+            const overlay = self.find(".leader-overlay");
 
             open.click(function () {
                 openPanel();
