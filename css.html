@@ -36,6 +36,7 @@
     }
 
     @media screen and (max-width: 991px) {
+
         .nav-hidden,
         .nav-hidden+.sub-nav {
             transform: translateY(-90px);
@@ -158,6 +159,7 @@
         background: white;
         height: 1px;
         transition: width 0.3s ease-in-out;
+        opacity: 0.5;
     }
 
     .hover-underslide.w--current:not(.bottom-nav-link)::before,
@@ -166,29 +168,8 @@
         width: 100%;
     }
 
-    .approach-block {
-        transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    }
-
-    .approach-icon svg path {
-        transition: stroke 0.3s ease-in-out;
-    }
-
-    .approach-heading {
-        transition: color 0.3s ease-in-out;
-    }
-
-    .approach-block:hover {
-        background: var(--mint);
-        border-color: var(--pale-navy);
-    }
-
-    .approach-block:hover .approach-icon svg path {
-        stroke: var(--navy);
-    }
-
-    .approach-block:hover .approach-heading {
-        color: var(--navy);
+    .hover-underslide.w--current:not(.bottom-nav-link)::before {
+        opacity: 1;
     }
 
     .resource-card {
@@ -361,7 +342,36 @@
         -webkit-line-clamp: 4;
     }
 
-    .blog-container-v1 .rich-text-block > *:first-child {
+    .blog-container-v1 .rich-text-block>*:first-child {
         margin-top: 0;
+    }
+
+    .dd-select-body.w--open {
+        border: 1px solid var(--pale-navy);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .dd-select-body .w-dropdown-link.w--current {
+        color: var(--cream);
+        background-color: var(--navy);
+    }
+
+    .dd-select-body .w-dropdown-link:not(.w--current):hover {
+        background-color: #f0f0f0;
+    }
+
+    .dd-select-body .w-dropdown-link {
+        padding: 0 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: var(--navy);
+        font-family: Be Vietnam Pro, sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 135%;
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
     }
 </style>

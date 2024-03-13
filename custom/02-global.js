@@ -59,6 +59,7 @@
 
     Global.prototype.init = function () {
         Global.prototype.socialSharing();
+        Global.prototype.fixTagLinks();
     };
 
     Global.prototype.refreshScrollTriggers = function () {
@@ -94,6 +95,27 @@
             }
 
             self.attr("href", sharingLink);
+        });
+    };
+
+    Global.prototype.fixTagLinks = function () {
+        const items = $(".tag-link");
+
+        items.each(function (index) {
+            const self = $(this);
+            const href = self.attr("href");
+            const value = self.text();
+            let key = '';
+
+            if (self.hasClass("type-tag")) {
+                key = 'type';
+            } else if (self.hasClass("topic-tag")) {
+                key = 'topic';
+            }
+
+            if (key) {
+                self.attr("href", `${href}?${key}=${value}`);
+            }
         });
     };
 
