@@ -84,7 +84,7 @@
             dots: false,
             nav: false,
             loop: true,
-            margin: 40,
+            margin: 60,
             autoplay: true,
             slideTransition: 'linear',
             autoplayTimeout: 0,
