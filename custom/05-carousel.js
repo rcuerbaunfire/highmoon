@@ -156,7 +156,7 @@
                     },
                     {
                         autoAlpha: 1,
-                        delay: 0.5,
+                        delay: 0.6,
                         duration: 0.6,
                         ease: Power2.easeOut,
                         overwrite: true
