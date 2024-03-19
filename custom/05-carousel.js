@@ -141,6 +141,7 @@
                 items: 1,
                 loop: true,
                 margin: 0,
+                smartSpeed: 1000,
                 autoplay: false,
                 slideTransition: 'linear',
             });
