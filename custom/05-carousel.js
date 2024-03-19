@@ -128,18 +128,27 @@
     };
 
     Carousel.prototype.heroCarousel = function () {
-        const carousel = $(".hero-carousel");
-        if (!carousel.length) return;
+        const carousels = $(".hero-carousel-wrapper");
+        if (!carousels.length) return;
 
-        carousel.owlCarousel({
-            dots: false,
-            nav: false,
-            items: 1,
-            loop: true,
-            margin: 0,
-            autoplay: false,
-            slideTransition: 'linear',
-        });
+        carousels.each(function() {
+            const self = $(this);
+            const carousel = self.find(".hero-carousel");
+            
+            const owl = carousel.owlCarousel({
+                dots: false,
+                nav: false,
+                items: 1,
+                loop: true,
+                margin: 0,
+                autoplay: false,
+                slideTransition: 'linear',
+            });
+
+            owl.on('changed.owl.carousel', function(event, item) {
+                console.log(event, item);
+            })
+        })
     };
 
     app.Carousel = Carousel;
