@@ -42,10 +42,10 @@
             });
 
             const nativePrev = self.find(".owl-prev");
-            const nativeNext = self.find(".owl-next"); 
+            const nativeNext = self.find(".owl-next");
 
             const carouselPrev = self.find(".owl-arrow-l");
-            const carouselNext = self.find(".owl-arrow-r"); 
+            const carouselNext = self.find(".owl-arrow-r");
 
             carouselNext.click(function () {
                 carouselInstance.trigger("next.owl.carousel");
@@ -131,23 +131,36 @@
         const carousels = $(".hero-carousel-wrapper");
         if (!carousels.length) return;
 
-        carousels.each(function() {
+        carousels.each(function () {
             const self = $(this);
             const carousel = self.find(".hero-carousel");
-            
+
             const owl = carousel.owlCarousel({
                 dots: false,
                 nav: false,
                 items: 1,
                 loop: true,
                 margin: 0,
-                smartSpeed: 2000,
+                smartSpeed: 1000,
                 autoplay: false,
                 slideTransition: 'linear',
             });
 
-            owl.on('changed.owl.carousel', function(event, item) {
-                console.log(event, $(event.currentTarget).find(".header-content"));
+            owl.on('changed.owl.carousel', function (event, item) {
+                const currentSlide = event.item.index;
+                const contentGroup = carousel.find('.owl-item').eq(currentSlide).find('.header-content');
+
+                gsap.fromTo(contentGroup,
+                    {
+                        autoAlpha: 0,
+                    },
+                    {
+                        autoAlpha: 1,
+                        duration: 0.6,
+                        ease: Power2.easeOut,
+                        overwrite: true
+                    }
+                );
             })
         })
     };
