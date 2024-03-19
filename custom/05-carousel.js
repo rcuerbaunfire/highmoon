@@ -163,6 +163,17 @@
             //         }
             //     );
             // })
+            
+            const carouselPrev = self.find(".owl-arrow-l");
+            const carouselNext = self.find(".owl-arrow-r");
+
+            carouselNext.click(function () {
+                carouselInstance.trigger("next.owl.carousel");
+            });
+
+            carouselPrev.click(function () {
+                carouselInstance.trigger("prev.owl.carousel");
+            });
         })
     };
 
