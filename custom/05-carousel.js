@@ -146,7 +146,7 @@
             });
 
             owl.on('changed.owl.carousel', function(event, item) {
-                console.log(event, item);
+                console.log($(event.currentTarget).find(".header-content"));
             })
         })
     };
