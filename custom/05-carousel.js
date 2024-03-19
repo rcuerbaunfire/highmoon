@@ -141,7 +141,7 @@
                 items: 1,
                 loop: true,
                 margin: 0,
-                smartSpeed: 1000,
+                smartSpeed: 300,
                 autoplay: false,
                 slideTransition: 'linear',
             });
@@ -156,6 +156,7 @@
                     },
                     {
                         autoAlpha: 1,
+                        delay: 0.3,
                         duration: 0.6,
                         ease: Power2.easeOut,
                         overwrite: true
