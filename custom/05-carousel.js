@@ -142,6 +142,7 @@
                 loop: true,
                 margin: 0,
                 smartSpeed: 500,
+                navSpeed: 500,
                 autoplay: false,
                 slideTransition: 'linear',
             });
