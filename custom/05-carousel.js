@@ -126,6 +126,21 @@
         });
     };
 
+    Carousel.prototype.heroCarousel = function () {
+        const carousel = $(".hero-carousel");
+        if (!carousel.length) return;
+
+        carousel.owlCarousel({
+            dots: false,
+            nav: false,
+            items: 1,
+            loop: true,
+            margin: 0,
+            autoplay: false,
+            slideTransition: 'linear',
+        });
+    };
+
     app.Carousel = Carousel;
 
     app.ready(function () {
