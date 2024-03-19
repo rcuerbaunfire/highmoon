@@ -146,23 +146,23 @@
                 slideTransition: 'linear',
             });
 
-            owl.on('changed.owl.carousel', function (event, item) {
-                const currentSlide = event.item.index;
-                const contentGroup = carousel.find('.owl-item').eq(currentSlide).find('.header-content');
+            // owl.on('changed.owl.carousel', function (event, item) {
+            //     const currentSlide = event.item.index;
+            //     const contentGroup = carousel.find('.owl-item').eq(currentSlide).find('.header-content');
 
-                gsap.fromTo(contentGroup,
-                    {
-                        autoAlpha: 0,
-                    },
-                    {
-                        autoAlpha: 1,
-                        delay: 0.6,
-                        duration: 0.6,
-                        ease: Power2.easeOut,
-                        overwrite: true
-                    }
-                );
-            })
+            //     gsap.fromTo(contentGroup,
+            //         {
+            //             autoAlpha: 0,
+            //         },
+            //         {
+            //             autoAlpha: 1,
+            //             delay: 0.6,
+            //             duration: 0.6,
+            //             ease: Power2.easeOut,
+            //             overwrite: true
+            //         }
+            //     );
+            // })
         })
     };
 
