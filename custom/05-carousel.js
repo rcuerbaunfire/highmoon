@@ -9,6 +9,7 @@
     Carousel.prototype.init = function () {
         Carousel.prototype.resourceCarousel();
         Carousel.prototype.clientCarousel();
+        Carousel.prototype.heroCarousel();
         app.Global.prototype.refreshScrollTriggers();
     };
 
