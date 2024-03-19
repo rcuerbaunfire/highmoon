@@ -128,7 +128,7 @@
     };
 
     Carousel.prototype.heroCarousel = function () {
-        const carousels = $(".hero-carousel-wrapper");
+        const carousels = $(".hero-carousel-container");
         if (!carousels.length) return;
 
         carousels.each(function () {
