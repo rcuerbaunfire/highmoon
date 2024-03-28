@@ -142,8 +142,6 @@
         items.each(function (index) {
             const self = $(this);
             const filterKeys = self.find(".filter-field").html().split('<br>');
-            const filterContainer = self.find("[fs-cmsfilter-element='filters']");
-            const filterList = self.find("[fs-cmsfilter-element='list']");
             const filterCheckboxes = self.find(".filter-checkbox");
             const filterLabels = self.find(".filter-label");
 
@@ -156,6 +154,11 @@
                 });
             } else {
                 filterCheckboxes.trigger("click");
+            }
+
+            if (index != 0) {
+                filterContainer.prop("fs-cmsfilter-element", `filters-${index + 1}`);
+                filterList.prop("fs-cmsfilter-element", `list-${index + 1}`);
             }
         });
 
