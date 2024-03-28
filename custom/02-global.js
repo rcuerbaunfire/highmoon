@@ -60,6 +60,7 @@
     Global.prototype.init = function () {
         Global.prototype.socialSharing();
         Global.prototype.fixTagLinks();
+        Global.prototype.handleFilterComponent();
     };
 
     Global.prototype.refreshScrollTriggers = function () {
@@ -88,8 +89,8 @@
 
             } else if (self.hasClass("facebook")) {
                 sharingLink = "https://www.facebook.com/sharer/sharer.php?u=" +
-                window.location.href;
-                
+                    window.location.href;
+
             } else if (self.hasClass("mail")) {
                 sharingLink = "mailto:?&body=" + window.location.href;
             }
@@ -100,6 +101,7 @@
 
     Global.prototype.fixTagLinks = function () {
         const items = $(".tag-link");
+        if (!items.length) return;
 
         items.each(function (index) {
             const self = $(this);
@@ -117,6 +119,48 @@
                 self.attr("href", `${href}?${key}=${value}`);
             }
         });
+    };
+
+    Global.prototype.handleFilterComponent = function () {
+        const items = $(".filter-component");
+        if (!items.length) return;
+
+        function assignCheckboxName(labels) {
+            labels.each(function (index) {
+                const self = $(this);
+                self.prev(".filter-checkbox").prop("name", self.text());
+            });
+        };
+
+        function appendCMSScript() {
+            const filterScript = document.createElement('script');
+            filterScript.src = 'https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js';
+            filterScript.async = true;
+            document.body.appendChild(filterScript);
+        }
+
+        items.each(function (index) {
+            const self = $(this);
+            const filterField = self.find(".filter-field").text();
+            const filterContainer = self.find("[fs-cmsfilter-element='filters']");
+            const filterList = self.find("[fs-cmsfilter-element='list']");
+            const filterCheckboxes = self.find(".filter-checkbox");
+            const filterLabels = self.find(".filter-label");
+
+            assignCheckboxName(filterLabels);
+
+            if (filterField) {
+                const filterKeys = filterField.split('\n');
+
+                filterKeys.forEach(key => {
+                    self.find(`.filter-checkbox[name='${key}']`).trigger("click");
+                });
+            } else {
+                filterCheckboxes.trigger("click");
+            }
+        });
+
+        appendCMSScript();
     };
 
     app.Global = Global;
