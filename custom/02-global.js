@@ -141,7 +141,7 @@
 
         items.each(function (index) {
             const self = $(this);
-            const filterField = self.find(".filter-field").text();
+            const filterKeys = self.find(".filter-field").html().split('<br>');
             const filterContainer = self.find("[fs-cmsfilter-element='filters']");
             const filterList = self.find("[fs-cmsfilter-element='list']");
             const filterCheckboxes = self.find(".filter-checkbox");
@@ -149,10 +149,7 @@
 
             assignCheckboxName(filterLabels);
 
-            if (filterField) {
-                const filterKeys = filterField.html().split('<br>');
-                console.log(filterKeys);
-
+            if (filterKeys && filterKeys.length) {
                 filterKeys.forEach(key => {
                     console.log(self.find(`.filter-checkbox[name='${key}']`));
                     self.find(`.filter-checkbox[name='${key}']`).trigger("click");
