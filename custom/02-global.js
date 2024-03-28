@@ -153,6 +153,7 @@
                 const filterKeys = filterField.split('\n');
 
                 filterKeys.forEach(key => {
+                    console.log(self.find(`.filter-checkbox[name='${key}']`));
                     self.find(`.filter-checkbox[name='${key}']`).trigger("click");
                 });
             } else {
