@@ -151,6 +151,7 @@
 
             if (filterField) {
                 const filterKeys = filterField.split('\n');
+                console.log(filterKeys);
 
                 filterKeys.forEach(key => {
                     console.log(self.find(`.filter-checkbox[name='${key}']`));
