@@ -150,7 +150,7 @@
             assignCheckboxName(filterLabels);
 
             if (filterField) {
-                const filterKeys = filterField.split('\n');
+                const filterKeys = filterField.html().split('<br>');
                 console.log(filterKeys);
 
                 filterKeys.forEach(key => {
