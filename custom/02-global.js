@@ -142,6 +142,8 @@
         items.each(function (index) {
             const self = $(this);
             const filterKeys = self.find(".filter-field").html().split('<br>');
+            const filterContainer = self.find("[fs-cmsfilter-element='filters']");
+            const filterList = self.find("[fs-cmsfilter-element='list']");
             const filterCheckboxes = self.find(".filter-checkbox");
             const filterLabels = self.find(".filter-label");
 
