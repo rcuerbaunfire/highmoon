@@ -159,8 +159,8 @@
             }
 
             if (index != 0) {
-                filterContainer.prop("fs-cmsfilter-element", `filters-${index + 1}`);
-                filterList.prop("fs-cmsfilter-element", `list-${index + 1}`);
+                filterContainer.attr("fs-cmsfilter-element", `filters-${index + 1}`);
+                filterList.attr("fs-cmsfilter-element", `list-${index + 1}`);
             }
         });
 
