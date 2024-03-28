@@ -146,10 +146,10 @@
             const filterLabels = self.find(".filter-label");
 
             assignCheckboxName(filterLabels);
+            console.log(filterKeys);
 
             if (filterKeys && filterKeys.length) {
                 filterKeys.forEach(key => {
-                    console.log(self.find(`.filter-checkbox[name='${key}']`));
                     self.find(`.filter-checkbox[name='${key}']`).trigger("click");
                 });
             } else {
